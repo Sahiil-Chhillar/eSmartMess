@@ -8,10 +8,13 @@ const cookieParser = require('cookie-parser')
 const app = express();
 app.use(express.json());
 app.use(cookieParser()); // To parse cookies
-app.use(cors({
-    origin: "https://smart-mess-chi.vercel.app", // your frontend port
+app.use(
+  cors({
+    // origin: "https://e-smart-mess.vercel.app/", // your deployed frontend port
+    origin: "http://localhost:5173", // your frontend port
     credentials: true, // 👈 allow cookies
-}));
+  }),
+);
 
 dotenv.config();
 
@@ -29,7 +32,7 @@ const PORT = process.env.PORT || 3000;
 connectDB();
 
 app.get("/", (req, res) => {
-    res.send("Welcome to SmartMess API");
+    res.send("Welcome to eSmartMess API");
 })
 
 app.use("/api/user", authRoutes);
@@ -41,5 +44,5 @@ app.use("/api/notice", noticeRoutes);
 app.use("/api/rebate", rebateRoutes);
 
 app.listen(PORT, () => {
-    console.log(`Server is running on http://localhost:${PORT}`);
+    console.log(`Server is running on ${PORT}`);
 })
