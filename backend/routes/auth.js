@@ -18,7 +18,14 @@ router.post('/register', async (req, res) => {
         let user = await User.findOne({ email });
         if (user) return res.status(400).json({ message: 'User already exists' });
 
-        user = new User({ name, email, password, studentRollNo, role });
+        // user = new User({ name, email, password, studentRollNo, role }); // Changed to always set role as "student"
+        user = new User({
+          name,
+          email,
+          password,
+          studentRollNo,
+          role: "student",
+        });
         await user.save();
 
         const savedUser = await user.save();
