@@ -10,7 +10,7 @@ app.use(express.json());
 app.use(cookieParser()); // To parse cookies
 app.use(
   cors({
-    origin: "https://e-smart-mess.vercel.app/", // your deployed frontend port
+    origin: "https://e-smart-mess.vercel.app", // your deployed frontend port
     credentials: true, // 👈 allow cookies
   }),
 );
