@@ -1,12 +1,12 @@
 <div align="center">
 
-<img src="frontend/public/logo.png" alt="SmartMess logo" width="90"/>
+<img src="frontend/public/logo.png" alt="eSmartMess logo" width="90"/>
 
-# 🍽️ SmartMess
+# 🍽️ eSmartMess
 
 ### Digitizing hostel mess operations: attendance, billing, rebates and payments in one platform.
 
-[![Live Demo](https://img.shields.io/badge/🚀_Live_Demo-smart--mess--chi.vercel.app-111827?style=for-the-badge)](https://smart-mess-chi.vercel.app)
+<!-- [![Live Demo](https://img.shields.io/badge/🚀_Live_Demo-eSmartMess-111827?style=for-the-badge)](https://smart-mess-chi.vercel.app) -->
 
 ![React](https://img.shields.io/badge/React_19-20232A?style=flat-square&logo=react&logoColor=61DAFB)
 ![Redux Toolkit](https://img.shields.io/badge/Redux_Toolkit-764ABC?style=flat-square&logo=redux&logoColor=white)
@@ -22,11 +22,11 @@
 
 ---
 
-## 📌 Why SmartMess?
+## 📌 Why eSmartMess?
 
 Hostel mess management usually runs on paper registers and cash collection. That means billing disputes, lost attendance records, unclear rebate rules and no complaint trail.
 
-**SmartMess replaces that with a role-based web platform.** Admins mark attendance for the whole hostel in one click. Bills are generated automatically from attendance. Students pay online and the payment is cryptographically verified. Approved rebates (leave periods) flow straight into attendance, so nobody is billed for days they were away.
+**eSmartMess replaces that with a role-based web platform.** Admins mark attendance for the whole hostel in one click. Bills are generated automatically from attendance. Students pay online and the payment is cryptographically verified. Approved rebates (leave periods) flow straight into attendance, so nobody is billed for days they were away.
 
 ---
 
@@ -219,7 +219,7 @@ Notice  (title, content, createdAt)
 ## 📁 Project Structure
 
 ```
-SmartMess/
+eSmartMess/
 ├── backend/
 │   ├── config/         # MongoDB connection
 │   ├── middlewares/    # userAuth, isAdmin
@@ -265,6 +265,17 @@ RAZORPAY_KEY_SECRET=<test-key-secret>
 
 > 🔑 **Admin accounts** are intentionally not creatable from the UI. Seed one directly in the database or through a protected script.
 
+<!-- ```
+POST /api/admin/register
+```
+With the following body:
+```json
+{
+  "role": "admin",
+  "email": "example@gmail.com",
+  "password": "admin"
+}
+``` -->
 ---
 
 ## 🗺️ Roadmap
@@ -280,10 +291,10 @@ RAZORPAY_KEY_SECRET=<test-key-secret>
 
 ## 👨‍💻 Author
 
-**Sahil** · Final-year B.Tech, Computer Engineering, NIT Kurukshetra
+**Sahil Chhillar** · Computer Engineering Graduate, NIT Kurukshetra'26
 
-[![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=flat-square&logo=linkedin&logoColor=white)](https://linkedin.com/in/)
+[![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/Sahiil-Chhillar)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=flat-square&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/sahil-chhillar/)
 
 <div align="center">
 

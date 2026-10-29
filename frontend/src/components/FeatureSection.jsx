@@ -32,7 +32,7 @@ const FeaturesSection = () => {
   return (
     <section className="py-16 bg-white" id="features">
       <div className="max-w-6xl mx-auto px-4 text-center">
-        <h2 className="text-4xl font-bold mb-10">Why Join SmartMess</h2>
+        <h2 className="text-4xl font-bold mb-10">Why Join eSmartMess</h2>
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           {features.map((feature, idx) => (
             <div

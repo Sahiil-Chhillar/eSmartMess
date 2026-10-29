@@ -15,12 +15,12 @@ const Navbar = ({ showHamburger = false }) => {
 
   return (
     <nav className="flex justify-between items-center px-6 py-4 shadow-md bg-white sticky top-0 z-50">
-      {/* Left: SmartMess Logo */}
+      {/* Left: eSmartMess Logo */}
       <h1
         className="text-2xl font-semibold cursor-pointer"
         onClick={() => navigate("/")}
       >
-        SmartMess
+        eSmartMess
       </h1>
 
       <div className="flex items-center space-x-4">
