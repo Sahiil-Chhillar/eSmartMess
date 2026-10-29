@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+</head>
+<body>
+    <button id="pay-btn">Pay Now</button>
+
+    <script>
+        document.getElementById("pay-btn").addEventListener("click", function () {
+            var options = {
+                "key": "rzp_test_oih65fIozloY7Q",
+                "amount": 10500, // Amount in paise (105 INR)
+                "currency": "INR",
+                "name": "Mess Payment",
+                "description": "Pay your mess bill",
+                "order_id": "order_QBXzoIYlmMehFq", // Your order ID
+                "handler": function (response) {
+                    console.log("Payment Successful:", response);
+                    alert("Payment successful!");
+                },
+                "theme": { "color": "#3399cc" }
+            };
+
+            var rzp1 = new Razorpay(options);
+            rzp1.open();
+        });
+    </script>
+</body>
+</html>
