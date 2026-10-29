@@ -11,6 +11,8 @@ app.use(cookieParser()); // To parse cookies
 app.use(
   cors({
     origin: "https://e-smart-mess.vercel.app", // your deployed frontend port
+    methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"],
     credentials: true, // 👈 allow cookies
   }),
 );
