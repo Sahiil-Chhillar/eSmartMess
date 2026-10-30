@@ -17,7 +17,7 @@ const StudentDashboard = () => {
 
   const fetchBill = async () => {
     try {
-      const response = await axios.get(`https://smart-mess-backend.vercel.app/api/attendance/bill`, {
+      const response = await axios.get(`${import.meta.env.VITE_API_URL}/api/attendance/bill`, {
         params: { studentId: user._id },
         withCredentials: true,
       });
@@ -33,7 +33,7 @@ const StudentDashboard = () => {
 
   const handleLogout = async () => {
     try {
-      await axios.post('https://smart-mess-backend.vercel.app/api/user/logout', {}, {
+      await axios.post(`${import.meta.env.VITE_API_URL}/api/user/logout`, {}, {
         withCredentials: true,
       });
 
@@ -48,7 +48,7 @@ const StudentDashboard = () => {
   const handlePay = async () => {
     try {
       const res = await axios.post(
-        "https://smart-mess-backend.vercel.app/api/payments/create-order",
+        `${import.meta.env.VITE_API_URL}/api/payments/create-order`,
         { studentId: user._id, amount: billInfo.amountDue * 100 },
         { withCredentials: true }
       );

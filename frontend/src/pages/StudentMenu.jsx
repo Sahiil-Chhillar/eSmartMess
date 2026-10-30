@@ -11,7 +11,7 @@ const StudentMenu = () => {
 
   const fetchMenu = async () => {
     try {
-      const res = await axios.get("https://smart-mess-backend.vercel.app/api/menu/get");
+      const res = await axios.get(`${import.meta.env.VITE_API_URL}/api/menu/get`);
       const sorted = [...res.data].sort(
         (a, b) => weekdays.indexOf(a.day) - weekdays.indexOf(b.day)
       );

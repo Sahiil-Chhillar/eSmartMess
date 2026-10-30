@@ -10,7 +10,7 @@ const AdminRebate = () => {
 
   const fetchRebates = async () => {
     try {
-      const res = await axios.get("https://smart-mess-backend.vercel.app/api/rebate/all", {
+      const res = await axios.get(`${import.meta.env.VITE_API_URL}/api/rebate/all`, {
         withCredentials: true,
       });
       setRebates(res.data);
@@ -24,7 +24,7 @@ const AdminRebate = () => {
   const updateRebateStatus = async (id, status) => {
     try {
       await axios.put(
-        `https://smart-mess-backend.vercel.app/api/rebate/update/${id}`,
+        `${import.meta.env.VITE_API_URL}/api/rebate/update/${id}`,
         { status },
         { withCredentials: true }
       );

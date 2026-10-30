@@ -15,7 +15,7 @@ const LoginPage = () => {
     const handleLogin = async (email, password) => {
         try {
             const res = await axios.post(
-                "https://smart-mess-backend.vercel.app/api/user/login",
+                `${import.meta.env.VITE_API_URL}/api/user/login`,
                 { emailId: email, password },
                 { withCredentials: true } // 👈 this is mandatory for cookies
             );

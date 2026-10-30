@@ -13,7 +13,7 @@ const AdminMenuPage = () => {
 
     const fetchMenu = async () => {
         try {
-            const res = await axios.get("https://smart-mess-backend.vercel.app/api/menu/get");
+            const res = await axios.get(`${import.meta.env.VITE_API_URL}/api/menu/get`);
             const sortedData = res.data.sort((a, b) => weekDays.indexOf(a.day) - weekDays.indexOf(b.day));
             setMenu(sortedData);
         } catch (error) {
@@ -33,10 +33,10 @@ const AdminMenuPage = () => {
         e.preventDefault();
         try {
             if (editDay) {
-                await axios.put(`https://smart-mess-backend.vercel.app/api/menu/update/${editDay}`, formData, { withCredentials: true });
+                await axios.put(`${import.meta.env.VITE_API_URL}/api/menu/update/${editDay}`, formData, { withCredentials: true });
                 toast.success("Menu updated successfully");
             } else {
-                await axios.post("https://smart-mess-backend.vercel.app/api/menu/add", formData, { withCredentials: true });
+                await axios.post(`${import.meta.env.VITE_API_URL}/api/menu/add`, formData, { withCredentials: true });
                 toast.success("Menu added successfully");
             }
             setFormData({ day: "", breakfast: "", lunch: "", dinner: "" });
@@ -54,7 +54,7 @@ const AdminMenuPage = () => {
 
     const handleDelete = async (day) => {
         try {
-            await axios.delete(`https://smart-mess-backend.vercel.app/api/menu/delete/${day}`, { withCredentials: true });
+            await axios.delete(`${import.meta.env.VITE_API_URL}/api/menu/delete/${day}`, { withCredentials: true });
             toast.success("Menu deleted successfully");
             fetchMenu();
         } catch (error) {

@@ -13,7 +13,7 @@ const AdminNotice = () => {
   const fetchNotices = async () => {
     setLoading(true);
     try {
-      const res = await axios.get("https://smart-mess-backend.vercel.app/api/notice/all", {
+      const res = await axios.get(`${import.meta.env.VITE_API_URL}/api/notice/all`, {
         withCredentials: true,
       });
       setNotices(res.data);
@@ -34,7 +34,7 @@ const AdminNotice = () => {
       if (editingId) {
         // Update
         await axios.put(
-          `https://smart-mess-backend.vercel.app/api/notice/update/${editingId}`,
+          `${import.meta.env.VITE_API_URL}/api/notice/update/${editingId}`,
           form,
           { withCredentials: true }
         );
@@ -42,7 +42,7 @@ const AdminNotice = () => {
       } else {
         // Create
         await axios.post(
-          "https://smart-mess-backend.vercel.app/api/notice/create",
+          `${import.meta.env.VITE_API_URL}/api/notice/create`,
           form,
           { withCredentials: true }
         );
@@ -64,7 +64,7 @@ const AdminNotice = () => {
   const handleDelete = async (id) => {
     if (!window.confirm("Are you sure you want to delete this notice?")) return;
     try {
-      await axios.delete(`https://smart-mess-backend.vercel.app/api/notice/delete/${id}`, {
+      await axios.delete(`${import.meta.env.VITE_API_URL}/api/notice/delete/${id}`, {
         withCredentials: true,
       });
       toast.success("Notice deleted.");

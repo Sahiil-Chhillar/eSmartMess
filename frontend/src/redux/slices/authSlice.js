@@ -3,7 +3,7 @@ import axios from "axios";
 
 export const fetchUser = () => async (dispatch) => {
     try {
-        const res = await axios.get("https://smart-mess-backend.vercel.app/api/user/profile", { withCredentials: true });
+        const res = await axios.get(`${import.meta.env.VITE_API_URL}/api/user/profile`, { withCredentials: true });
         dispatch(setUser(res.data.user));
     } catch (err) {
         console.error("Auto-login failed: ", err.message);

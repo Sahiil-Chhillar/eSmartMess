@@ -13,7 +13,7 @@ const StudentRebate = () => {
 
   const fetchPastRebates = async () => {
     try {
-      const res = await axios.get('https://smart-mess-backend.vercel.app/api/rebate/my-rebates', {
+      const res = await axios.get(`${import.meta.env.VITE_API_URL}/api/rebate/my-rebates`, {
         withCredentials: true,
       });
       setPastRebates(res.data);
@@ -31,7 +31,7 @@ const StudentRebate = () => {
 
     try {
       const res = await axios.post(
-        'https://smart-mess-backend.vercel.app/api/rebate/apply',
+        `${import.meta.env.VITE_API_URL}/api/rebate/apply`,
         { startDate, endDate },
         { withCredentials: true }
       );

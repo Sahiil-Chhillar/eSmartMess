@@ -12,7 +12,7 @@ const AdminPendingBills = () => {
 
   const fetchPendingBills = async () => {
     try {
-      const res = await axios.get("https://smart-mess-backend.vercel.app/api/attendance/pending", {
+      const res = await axios.get(`${import.meta.env.VITE_API_URL}/api/attendance/pending`, {
         withCredentials: true,
       });
       setPendingBills(res.data);
