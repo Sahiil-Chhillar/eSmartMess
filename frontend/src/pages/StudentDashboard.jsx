@@ -89,7 +89,7 @@ const StudentDashboard = () => {
   const verifyPayment = async (response, order) => {
     try {
       const verifyRes = await axios.post(
-        "https://smart-mess-backend.vercel.app/api/payments/verify-payment",
+        `${import.meta.env.VITE_API_URL}/api/payments/verify-payment`,
         {
           razorpay_order_id: response.razorpay_order_id,
           razorpay_payment_id: response.razorpay_payment_id,
